@@ -139,3 +139,73 @@ Webpack의 해시 함수가 OpenSSL 3과 충돌하는 문제를 우회하는 방
   ```
 
 </details>
+<br>
+
+# Vue-Router 설치 및 적용
+<details>
+<summary>접기/펼치기</summary>
+<br>
+
+- vue-router@4 npm 의존성 추가
+  ```bash
+  npm install vue-router@4
+  ```
+
+- [src/routes/index.js](src/routes/index.js) 파일 추가 및 코드 구성
+
+  routes 속성에 컴포넌트를 등록해준다.
+
+  ```js
+  import { createRouter, createWebHashHistory } from 'vue-router'
+  import Home from '~/pages/Home.vue'
+
+  export default createRouter({
+    history: createWebHashHistory(),
+    routes: [
+      {
+        path: '/',
+        name: 'Home',
+        component: Home
+      }
+    ]
+  })
+  ```
+
+- [src/routes/index.js](src/main.js) 
+
+  라우팅 기능을 할 수 있도록 use() 메소드를 통해 메소드 체이닝으로 연결시켜 준다.
+  
+  ```js
+  // import Vue from "vue";
+  import { createApp } from "vue";
+  import App from "./App";
+  import router from "./routes/index";
+
+  createApp(App)
+    .use(router)
+    .mount("#app");
+  ```
+
+- [src/pages/Home.vue](src/pages/Home.vue)
+
+  ```vue
+  <template>
+    <div>
+      Home.vue Pages
+    </div>
+  </template>
+  ```
+
+- [src/Home.vue](src/App.vue)
+
+  Router를 그려줄 RouterView 태그를 App.vue 템플릿에 작성한다.
+
+  ```vue
+  <template>
+    <RouterView />
+  </template>
+
+  ```
+
+- 
+</details>
