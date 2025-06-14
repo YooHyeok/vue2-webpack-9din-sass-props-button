@@ -1,4 +1,10 @@
-# Webpack 기본 템플릿
+
+# 프로젝트 구성 및 환경 설정
+<details>
+<summary>접기/펼치기</summary>
+<br>
+
+## Webpack 기본 템플릿
 
 __webpack__: 모듈(패키지) 번들러의 핵심 패키지<br>
 __webpack-cli__: 터미널에서 Webpack 명령(CLI)을 사용할 수 있음<br>
@@ -30,7 +36,7 @@ __autoprefixer__: 스타일에 자동으로 공급 업체 접두사(Vendor prefi
 
 <br>
 
-# 프로젝트 clone `degit`
+## 프로젝트 clone `degit`
 깃 리포지토리에서 파일만 복사해오는 도구인 degit 옵션을 사용한다.
 
 #### npx 방식
@@ -49,8 +55,10 @@ degit을 로컬 또는 전역에 설치한 뒤 degit 명령을 통해 GitHub 레
 
 <br>
 
-# npm run dev 기동 이슈
+## npm run dev 기동 이슈
 ### error:0308010C:digital envelope routines::unsupported
+
+<br>
 
 <details>
 <summary>접기/펼치기</summary>
@@ -69,8 +77,10 @@ https://github.com/browserslist/browserslist#browsers-data-updating
 <i> [webpack-dev-server] Content not from webpack is served from {프로젝트 경로}
 ```
 </details>
+<br>
 
 위 로그 이후 아래 에러 발생
+<br>
 
 <details>
 <summary>접기/펼치기</summary>
@@ -100,6 +110,8 @@ Error: error:0308010C:digital envelope routines::unsupported
 ```
 </details>
 
+<br>
+
  Node.js 17 이상에서 Webpack 4~5 버전 사용 시 자주 발생하는 OpenSSL 관련 이슈
  Node.js 17부터 OpenSSL 3이 기본이 되었고, 이전 방식으로 createHash()를 사용하는 라이브러리들이 충돌을 일으키기 때문에 발생.
 ```
@@ -125,3 +137,5 @@ Webpack의 해시 함수가 OpenSSL 3과 충돌하는 문제를 우회하는 방
   ```
   export NODE_OPTIONS=--openssl-legacy-provider
   ```
+
+</details>
