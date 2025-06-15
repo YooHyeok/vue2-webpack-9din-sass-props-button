@@ -1,25 +1,29 @@
 <template>
-  <div>
-    Home.vue Pages
+  <div class="page">
+    <Navigation />
+    <Content />
   </div>
 </template>
 
 <script>
+import Navigation from '~/components/organisms/Navigation.vue'
+import Content from '~/components/organisms/Content.vue'
+
 export default {
-  /**@type {import("vue".PropType<Theme>)} */
-  props: {
-    theme: {
-      type: String,
-      required: true,
-      default: 'normal'
-    }
-  }
+    components: {
+        Navigation,
+        Content,
+    },
 }
 </script>
 
 <style lang="scss" scoped>
-@import '~/assets/styles/main.scss';
-div {
-  color: $color-orange-200;
+.page {
+    display: flex;
+    align-items: center;
+
+    width: 1137px;
+
+    margin: auto;
 }
 </style>
